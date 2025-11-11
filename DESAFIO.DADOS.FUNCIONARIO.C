@@ -24,7 +24,7 @@ int main()
     struct Funcionario f;
 
     printf("\nDigite o nome: ");
-    scanf(" %[^\n]", f.nome);
+    scanf(" %[^\n]", &f.nome);
 
     printf("\nDigite o sexo (M/F): ");
     scanf(" %c", &f.sexo);
@@ -33,16 +33,16 @@ int main()
     scanf("%d", &f.idade);
 
     printf("\nDigite o CPF: ");
-    scanf("%s", f.CPF);
+    scanf("%s", &f.CPF);
 
     printf("\nDigite a data de nascimento (dd/mm/aaaa): ");
-    scanf("%s", f.data_nasc);
+    scanf("%s", &f.data_nasc);
 
     printf("\nDigite o codigo do setor (0-99): ");
     scanf("%d", &f.cod_setor);
 
     printf("\nDigite o cargo: ");
-    scanf(" %[^\n]", f.cargo);
+    scanf(" %[^\n]", &f.cargo);
 
     printf("\nDigite o salario: ");
     scanf("%f", &f.salario);
@@ -59,3 +59,4 @@ int main()
 
     return 0;
 }
+
