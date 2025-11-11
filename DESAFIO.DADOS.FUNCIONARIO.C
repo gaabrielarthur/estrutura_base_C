@@ -1,62 +1,59 @@
 /*
-c) Faça um programa que armazene em um registro de dados (estrutura composta) os da dos de um funcionário de uma empresa, 
-compostos de: Nome, Idade, Sexo (M/F), CPF, Data de Nascimento, Código do Setor onde trabalha (0- 99),
- cargo que ocupa (string de até 30 caracteres) e Salário. 
+c) Faça um programa que armazene em um registro de dados (estrutura composta) os dados de um funcionário de uma empresa,
+compostos de: Nome, Idade, Sexo M/(F), CPF, Data de Nascimento, Código do Setor onde trabalha (0- 99),
+ cargo que ocupa (string de até 30 caracteres) e Salário.
 Os dados devem ser digitados pelo usuário, armazenados na estrutura e exibidos na tela. Instruções:
 */
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
-struct Funcionario
+struct Registro
 {
     char nome[50];
-    char sexo;
     int idade;
+    char sexo;
     char CPF[15];
-    char data_nasc[11];
-    int cod_setor;
-    char cargo[31];
+    int setor;
+    char cargo[30];
     float salario;
 };
-
 int main()
 {
-    struct Funcionario f;
+    struct Registro R;
 
-    printf("\nDigite o nome: ");
-    scanf(" %[^\n]", &f.nome);
+    printf("\nDigite seu nome:");
+    scanf(" %[^\n]", R.nome);
 
-    printf("\nDigite o sexo (M/F): ");
-    scanf(" %c", &f.sexo);
+    printf("\nDigite sua idade: ");
+    scanf("%d", &R.idade);
 
-    printf("\nDigite a idade: ");
-    scanf("%d", &f.idade);
+    printf("\nDigite seu sexo(M/F):");
+    scanf("%s", &R.sexo);
 
-    printf("\nDigite o CPF: ");
-    scanf("%s", &f.CPF);
+    printf("\nDigite seu CPF:");
+    scanf("%s", R.CPF);
 
-    printf("\nDigite a data de nascimento (dd/mm/aaaa): ");
-    scanf("%s", &f.data_nasc);
+    printf("\nDigite seu setor ( 1 À 99): ");
+    scanf("%d", &R.setor);
 
-    printf("\nDigite o codigo do setor (0-99): ");
-    scanf("%d", &f.cod_setor);
+    printf("\nDigite seu cargo: ");
+    scanf(" %[^\n]", R.cargo);
 
-    printf("\nDigite o cargo: ");
-    scanf(" %[^\n]", &f.cargo);
+    printf("\nDigite seu salario: ");
+    scanf("%f", &R.salario);
 
-    printf("\nDigite o salario: ");
-    scanf("%f", &f.salario);
-
-    printf("\n--- DADOS DO FUNCIONARIO ---\n");
-    printf("\nNome: %s", f.nome);
-    printf("\nSexo: %c", f.sexo);
-    printf("\nIdade: %d", f.idade);
-    printf("\nCPF: %s", f.CPF);
-    printf("\nData de nascimento: %s", f.data_nasc);
-    printf("\nCodigo do setor: %d", f.cod_setor);
-    printf("Cargo: %s\n", f.cargo);
-    printf("\nSalario: %.2f", f.salario);
+    printf("\n---------DADOS DO FUNCIONARIO-----------\n");
+    printf("\nNOME: %s", R.nome);
+    printf("\nIDADE: %d", R.idade);
+    printf("\nSEXO: %c", R.sexo);
+    printf("\nCPF: %s", R.CPF);
+    printf("\nSETOR: %d", R.setor);
+    printf("\nCARGO: %s", R.cargo);
+    printf("\nSALARIO: %.2f", R.salario);
 
     return 0;
 }
+
+
 
